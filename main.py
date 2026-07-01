@@ -1,4 +1,3 @@
-import os
 import io
 import joblib
 import pandas as pd
@@ -11,8 +10,6 @@ app = FastAPI(
     description="ML API for predicting home prices",
     version="1.0.0"
 )
-if not os.path.exists("house_model.joblib"):
-    import train
 
 model = joblib.load("house_model.joblib")
 features = joblib.load("house_features.joblib")
